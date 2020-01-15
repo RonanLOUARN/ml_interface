@@ -1,0 +1,21 @@
+{% extends 'layouts/base.html' %}
+
+{% block content %}
+  <div class="container">
+    <div class="jumbotron">
+      <h1 class="display-4">Mes prédictions</h1>
+      <p class="lead"></p>
+      <hr class="my-4">
+      <p>Mes prédictions déjà effectuées.</p>
+      <a class="btn btn-primary btn-lg" href="new" role="button">Nouvelle prediction</a>
+    </div>
+    <hr>
+    <ul class="list-group">
+      {% for prediction in predictions %}
+        <li class="list-group-item">
+          {{ prediction.id }} - {{ prediction.created_at }} - {{ prediction.result }}
+        </li>
+      {% endfor %}
+    </ul>
+  </container>
+{% endblock %}
